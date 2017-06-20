@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,8 @@ public class LoadAsset : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		var myLoadedAssetBundle = AssetBundle.LoadFromFile("C:\\Users\\Faizan\\Documents\\test\\newAssetBundles\\ceilinglight2");
+	var myLoadedAssetBundle = AssetBundle.LoadFromFile("C:\\Users\\Faizan\\Documents\\test\\newAssetBundles\\ceilinglight2");
+        //var myLoadedAssetBundle = AssetBundle.LoadFromFile("C:\\Users\\Faizan\\Documents\\test\\manualAssetBundles\\testbundle");
         if (myLoadedAssetBundle == null)
         {
             Debug.Log("Failed to load AssetBundle!");
@@ -23,9 +24,9 @@ public class LoadAsset : MonoBehaviour {
         Debug.Log("loaded asset from bundle is " + prefab);
         Instantiate(prefab);
 
-        var materialLoaded = myLoadedAssetBundle.LoadAsset<Material>("Line088Mat");
-        MeshRenderer renderer = prefab.AddComponent<MeshRenderer>();
-        prefab.GetComponent<MeshRenderer>().material=materialLoaded;
+        //var materialLoaded = myLoadedAssetBundle.LoadAsset<Material>("Line088Mat");
+        //MeshRenderer renderer = prefab.AddComponent<MeshRenderer>();
+        //prefab.GetComponent<MeshRenderer>().material=materialLoaded;
 
 		
 	}
