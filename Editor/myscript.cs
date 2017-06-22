@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -75,7 +75,9 @@ public class myscript {
 
 		Debug.Log("Main script is started");
 		UnityEngine.Object[] resources;
-		string[] resourceFolderNames=System.IO.Directory.GetDirectories("C:\\Users\\Faizan\\Documents\\test\\Assets\\Resources");
+		string[] intermediateAddress=System.IO.Directory.GetDirectories("C:\\Users\\Faizan\\Documents\\test\\Assets\\parrentResources");
+		string uniqueFolderName=getFoldernameFromPath(intermediateAddress[0]);
+		string[] resourceFolderNames=System.IO.Directory.GetDirectories("C:\\Users\\Faizan\\Documents\\test\\Assets\\parrentResources\\"+uniqueFolderName+"\\Resources");
 		foreach (var folderPath in  resourceFolderNames)
 		{
 			var folder=getFoldernameFromPath(folderPath);
