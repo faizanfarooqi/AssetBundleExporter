@@ -28,6 +28,7 @@ public class myscript {
 	static void BuildAllAssetBundles ()
     {    	
 		Debug.Log("Main script is started");
+		string logFilePath = "C:\\Users\\Faizan\\Desktop\\assetBundleExporterLog.txt";
 		string logText="In Editor script to export bundles";
 		UnityEngine.Object[] resources;
 		if(System.IO.Directory.Exists("C:\\Users\\Faizan\\Documents\\test\\Assets\\parrentResources")==false)
@@ -46,16 +47,14 @@ public class myscript {
 			{
 				logText=logText+"\n";
 			}
-			string path = "C:\\Users\\Faizan\\Desktop\\assetBundleExporterLog.txt";
-			File.WriteAllText(path, logText);	
+			File.WriteAllText(logFilePath, logText);	
 			return;	
 		}
 		string uniqueFolderName=getFoldernameFromPath(intermediateAddress[0]);
 		if(System.IO.Directory.Exists("C:\\Users\\Faizan\\Documents\\test\\Assets\\parrentResources\\"+uniqueFolderName+"\\Resources")==false)
 		{
 			logText=logText+"\nResources folder does not exist";
-			string path = "C:\\Users\\Faizan\\Desktop\\assetBundleExporterLog.txt";
-			File.WriteAllText(path, logText);
+			File.WriteAllText(logFilePath, logText);
 			return;
 		}
 		string[] resourceFolderNames=System.IO.Directory.GetDirectories("C:\\Users\\Faizan\\Documents\\test\\Assets\\parrentResources\\"+uniqueFolderName+"\\Resources");
@@ -84,8 +83,7 @@ public class myscript {
         BuildPipeline.BuildAssetBundles("newAssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
 
         //writing Log in manual file
-        string path = "C:\\Users\\Faizan\\Desktop\\assetBundleExporterLog.txt";
-		File.WriteAllText(path, logText);
+		File.WriteAllText(logFilePath, logText);
 
 
 	}
