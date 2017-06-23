@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/*
+This class modifies the default property to import assets and sets the scale of each imported model to 0.001f
+created by Faizan-ur-Rehman
+Last Modified 22/6/2017
+*/
 public class modifiedAssetImporter : AssetPostprocessor {
 
 	// Use this for initialization
@@ -14,6 +19,10 @@ public class modifiedAssetImporter : AssetPostprocessor {
 	void Update () {
 		
 	}
+	/*overrided function to modify default global scale
+	created by Faizan-ur-Rehman
+	Last Modified 22/6/2017
+	*/
 	 private void OnPreprocessModel()
 	 {
 	 	Debug.Log("on pre processor model function called");
